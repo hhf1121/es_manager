@@ -19,7 +19,7 @@ public class CanalClient implements DisposableBean{
         //即使我们用的是集群，其实同时也只有一个canal能工作，只有当他挂了 才会启用其他的，所以就是一个备份
     	canalConnector = CanalConnectors.newClusterConnector(Lists.newArrayList(
            new InetSocketAddress("192.168.203.174", 11111)),
-                "books","canal","canal"
+                "book","canal","canal"
            );
         canalConnector.connect();
         //指定filter，格式{database}.{table}
